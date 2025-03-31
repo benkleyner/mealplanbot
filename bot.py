@@ -17,22 +17,22 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Channel ID
-CHANNEL_ID = 1197930110062436405  # Replace with your actual channel ID
+CHANNEL_ID = 1197930110062436405
 
-# AEPi Lunch & Dinner Menus
+# AEPi Lunch & Dinner Menus - Week 3 (3/31 - 4/2)
 lunch_menu = {
-    "Monday": "Scrambled Egg, Turkey Bacon & Chicken Biscuits\nHome Fried Potatoes\nSalad",
-    "Tuesday": "Beef, Bean & Cheese Chimichangas(2)\nSaffron Tomato Rice\nChopped Salad",
-    "Wednesday": "Soup & Sandwich\nBroccoli Cheddar Soup\nGrilled Chicken & Turkey Bacon on Toasted Ciabatta w/ lettuce, tomato and pesto mayo\nCurly Fries w/ spicy mayo (on side)",
-    "Thursday": "Open-Face Hot Meatloaf Sandwich w/ Gravy on Garlic Texas Toast\nMini Hash brown Rounds\nSalad",
-    "Friday": "Beef & Chicken Lo Mein w/ Stir Fry Veg\nIceberg Salad w/ ginger dressing\nChicken Pot Stickers",
+    "Monday": "Corned Beef Hash w/ two fried eggs\nToasted Buttered English Muffin\nSalad",
+    "Tuesday": "Soft Taco Duo;\nGrilled Skirt Steak\nGrilled Chicken\nw/ cheese, salsa & lettuce\nTomato Saffron Rice\nSalad",
+    "Wednesday": "Teriyaki Chicken Wraps\nPot Stickers w/sweet chili sauce\nJasmine Rice\nSalad",
+    "Thursday": "No lunch service today.",
+    "Friday": "No lunch service today.",
 }
 
 dinner_menu = {
-    "Monday": "Southern Smothered Chicken Legs in Mushroom Thyme Gravy\nSmall Roasted Round Potatoes\nCrispy Kale with Garlic\nDinner roll",
-    "Tuesday": "Braised Southwest Beef\nCilantro Rice\nBaked Black Beans\nSalad with Chipotle Ranch",
-    "Wednesday": "Grilled Chicken Alfredo w/ Asparagus\nCaesar Salad\nGarlic butter breadsticks\nLemon Cake",
-    "Thursday": "Crispy Orange Chicken & Broccoli\nSteamed Jasmine Rice\nSalad with sesame dressing",
+    "Monday": "Pineapple Jerk Chicken\nRed Beans & Rice\nSweet Plantains\nKale Salad w/dried cranberries, toasted pumpkin seeds & poppyseed dressing",
+    "Tuesday": "Ground Lamb Stuffed Pita Arabe\nSpanish Potatoes & Onion\nGarbanzo Beans in Tomato Chili sauce\nSalad",
+    "Wednesday": "Baked Penne w/chicken, ricotta, spinach and tomato cream sauce\nCaesar salad\nGarlic toast",
+    "Thursday": "No dinner service today.",
     "Friday": "Go to Chabad or Hillel or else you suck!",
 }
 
@@ -48,13 +48,23 @@ def get_dinner_menu():
 async def send_lunch_menu():
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
-        await channel.send(f"🍽️ Today's Lunch Menu:\n\n{get_lunch_menu()}")
+        day = datetime.today().strftime("%A")
+        if day in ["Thursday", "Friday"]:
+            await channel.send(f"🍽️ Today's Lunch Menu:\n\n{lunch_menu.get(day)}")
+        else:
+            await channel.send(f"🍽️ Today's Lunch Menu:\n\n{get_lunch_menu()}")
 
 
 async def send_dinner_menu():
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
-        await channel.send(f"🍽️ Today's Dinner Menu:\n\n{get_dinner_menu()}")
+        day = datetime.today().strftime("%A")
+        if day in ["Thursday"]:
+            await channel.send(f"🍽️ Today's Dinner Menu:\n\n{dinner_menu.get(day)}")
+        elif day == "Friday":
+            await channel.send(f"🍽️ Today's Dinner Menu:\n\n{dinner_menu.get(day)}")
+        else:
+            await channel.send(f"🍽️ Today's Dinner Menu:\n\n{get_dinner_menu()}")
 
 
 # Scheduled tasks
@@ -65,8 +75,27 @@ async def run_schedule():
 
 
 def schedule_task():
-    schedule.every().day.at("11:30").do(lambda: bot.loop.create_task(send_lunch_menu()))
-    schedule.every().day.at("16:00").do(
+    # Only schedule announcements for Monday, Tuesday, and Wednesday
+    schedule.every().monday.at("11:30").do(
+        lambda: bot.loop.create_task(send_lunch_menu())
+    )
+    schedule.every().tuesday.at("11:30").do(
+        lambda: bot.loop.create_task(send_lunch_menu())
+    )
+    schedule.every().wednesday.at("11:30").do(
+        lambda: bot.loop.create_task(send_lunch_menu())
+    )
+
+    schedule.every().monday.at("16:00").do(
+        lambda: bot.loop.create_task(send_dinner_menu())
+    )
+    schedule.every().tuesday.at("16:00").do(
+        lambda: bot.loop.create_task(send_dinner_menu())
+    )
+    schedule.every().wednesday.at("16:00").do(
+        lambda: bot.loop.create_task(send_dinner_menu())
+    )
+    schedule.every().friday.at("16:00").do(
         lambda: bot.loop.create_task(send_dinner_menu())
     )
 
@@ -74,6 +103,7 @@ def schedule_task():
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
+    schedule_task()  # Added this line to ensure tasks are scheduled
     await asyncio.sleep(5)
     bot.loop.create_task(run_schedule())
     print("✅ Scheduler started!")
@@ -91,11 +121,6 @@ async def dinner(ctx):
     await ctx.send(f"🍽️ Today's Dinner Menu:\n\n{get_dinner_menu()}")
 
 
-@bot.command()
-async def booger(ctx):
-    await ctx.send("@flabster")
-
-
 bot.remove_command("help")  # Removes the built-in help command
 
 
@@ -110,5 +135,5 @@ async def help(ctx):
     await ctx.send(help_message)
 
 
-keep_alive()  # Prevents Replit from sleeping
+keep_alive()
 bot.run(TOKEN)
