@@ -21,18 +21,18 @@ CHANNEL_ID = 1197930110062436405
 
 # AEPi Lunch & Dinner Menus - Week 3 (3/31 - 4/2)
 lunch_menu = {
-    "Monday": "Corned Beef Hash w/ two fried eggs\nToasted Buttered English Muffin\nSalad",
-    "Tuesday": "Soft Taco Duo;\nGrilled Skirt Steak\nGrilled Chicken\nw/ cheese, salsa & lettuce\nTomato Saffron Rice\nSalad",
-    "Wednesday": "Teriyaki Chicken Wraps\nPot Stickers w/sweet chili sauce\nJasmine Rice\nSalad",
-    "Thursday": "No lunch service today.",
-    "Friday": "No lunch service today.",
+    "Monday": "Cheesy Scrambled Eggs\nTurkey Sausage\nFrench Toast Sticks w/ maple syrup\nFresh Fruit",
+    "Tuesday": "Chicken Quesadillas\nCilantro Rice\nTortilla chips & Salsa\nSalad",
+    "Wednesday": "Tomato Basil Soup\nCroissant Grilled Cheese w/ Turkey Bacon\nKrinkle Cut Garlic Parm Fries \nSalad",
+    "Thursday": "BBQ Pulled Chicken Sliders\nAsian Slaw w/ mandarins orange\nSeasoned Fries w/spicy mayo",
+    "Friday": "Salmon Kimchi Fried Rice\nVegetable Spring Rolls\nChopped Salad w/ ginger dressing",
 }
 
 dinner_menu = {
-    "Monday": "Pineapple Jerk Chicken\nRed Beans & Rice\nSweet Plantains\nKale Salad w/dried cranberries, toasted pumpkin seeds & poppyseed dressing",
-    "Tuesday": "Ground Lamb Stuffed Pita Arabe\nSpanish Potatoes & Onion\nGarbanzo Beans in Tomato Chili sauce\nSalad",
-    "Wednesday": "Baked Penne w/chicken, ricotta, spinach and tomato cream sauce\nCaesar salad\nGarlic toast",
-    "Thursday": "No dinner service today.",
+    "Monday": "Roasted Chicken w/ Caramelized Onions and green peppers\nRosemary Garlic potatoes\nGreen Beans",
+    "Tuesday": "Traditional Taco Night(4)\nYellow Rice\nBlack Bean Dip\nGuacamole\nSour cream",
+    "Wednesday": "Meatball Calzones w/ marinara sauce on side\nCaesar salad\nLemon cake w/ fresh berries",
+    "Thursday": "Beef & Chicken Stir Fry\nJasmine Rice \nCold Sesame Noodles\nSalad",
     "Friday": "Go to Chabad or Hillel or else you suck!",
 }
 
