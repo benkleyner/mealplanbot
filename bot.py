@@ -21,18 +21,18 @@ CHANNEL_ID = 1197930110062436405
 
 # AEPi Lunch & Dinner Menus - Week 3 (3/31 - 4/2)
 lunch_menu = {
-    "Monday": "Cheesy Scrambled Eggs\nTurkey Sausage\nFrench Toast Sticks w/ maple syrup\nFresh Fruit",
-    "Tuesday": "Chicken Quesadillas\nCilantro Rice\nTortilla chips & Salsa\nSalad",
-    "Wednesday": "Tomato Basil Soup\nCroissant Grilled Cheese w/ Turkey Bacon\nKrinkle Cut Garlic Parm Fries \nSalad",
-    "Thursday": "BBQ Pulled Chicken Sliders\nAsian Slaw w/ mandarins orange\nSeasoned Fries w/spicy mayo",
-    "Friday": "Salmon Kimchi Fried Rice\nVegetable Spring Rolls\nChopped Salad w/ ginger dressing",
+    "Monday": "Shaved Creamed Beef over\nCrispy Hash Brown Patties\nSpinach Salad w/ Strawberries",
+    "Tuesday": "Healthy Lettuce Wraps or Bowls\nTaco Beef w/ Quinoa\nGrilled chicken Breasts\nShredded Biria Beef\nRice\nBeans\nGuacamole\nSour Cream\nLettuce Cups",
+    "Wednesday": "Egg Battered Chicken Parmesan \nw/ Marinara sauce\nZucchini Noodles\nSalad w/ Italian dressing",
+    "Thursday": "(2)Beef & Rice Stuffed Peppers\nw/ Chipotle cream \nSalad",
+    "Friday": "Beer Battered Fish & Chips\nSeasoned Steak Fries\nCole Slaw",
 }
 
 dinner_menu = {
-    "Monday": "Roasted Chicken w/ Caramelized Onions and green peppers\nRosemary Garlic potatoes\nGreen Beans",
-    "Tuesday": "Traditional Taco Night(4)\nYellow Rice\nBlack Bean Dip\nGuacamole\nSour cream",
-    "Wednesday": "Meatball Calzones w/ marinara sauce on side\nCaesar salad\nLemon cake w/ fresh berries",
-    "Thursday": "Beef & Chicken Stir Fry\nJasmine Rice \nCold Sesame Noodles\nSalad",
+    "Monday": "Cottage Pie w/ peas, carrots and Roasted Garlic Cheddar Mashed Potatoes\nSalad ",
+    "Tuesday": "Chicken Adobo\nSteamed Rice\nSalad",
+    "Wednesday": "English Style Cod\nGarlic Potatoes\nGrilled Asparagus\nSalad",
+    "Thursday": "Lemon Chicken w/ Spinach and capers\nYellow Rice\nKale Caesar Salad w/ matzah croutons",
     "Friday": "Go to Chabad or Hillel or else you suck!",
 }
 
