@@ -21,18 +21,18 @@ CHANNEL_ID = 1197930110062436405
 
 # AEPi Lunch & Dinner Menus - Week 3 (3/31 - 4/2)
 lunch_menu = {
-    "Monday": "Shaved Creamed Beef over\nCrispy Hash Brown Patties\nSpinach Salad w/ Strawberries",
-    "Tuesday": "Healthy Lettuce Wraps or Bowls\nTaco Beef w/ Quinoa\nGrilled chicken Breasts\nShredded Biria Beef\nRice\nBeans\nGuacamole\nSour Cream\nLettuce Cups",
-    "Wednesday": "Egg Battered Chicken Parmesan \nw/ Marinara sauce\nZucchini Noodles\nSalad w/ Italian dressing",
-    "Thursday": "(2)Beef & Rice Stuffed Peppers\nw/ Chipotle cream \nSalad",
-    "Friday": "Beer Battered Fish & Chips\nSeasoned Steak Fries\nCole Slaw",
+    "Monday": "Scrambled Eggs w/ Cheese\nTurkey Bacon\nTurkey Sausage\nButtermilk Biscuits\nFresh fruit",
+    "Tuesday": "Grilled Chicken & Beef Fajitas\nRice & Beans\nSalad",
+    "Wednesday": "Chicken, Sun-Dried Tomato Pesto Pan Pizza\nCaesar Salad",
+    "Thursday": "Half Pound Cheeseburger \nSeasoned Fries\nSalad ",
+    "Friday": "Grilled Salmon Po’ Boy\nTater Tots\nSalad",
 }
 
 dinner_menu = {
-    "Monday": "Cottage Pie w/ peas, carrots and Roasted Garlic Cheddar Mashed Potatoes\nSalad ",
-    "Tuesday": "Chicken Adobo\nSteamed Rice\nSalad",
-    "Wednesday": "English Style Cod\nGarlic Potatoes\nGrilled Asparagus\nSalad",
-    "Thursday": "Lemon Chicken w/ Spinach and capers\nYellow Rice\nKale Caesar Salad w/ matzah croutons",
+    "Monday": "Meatball Stroganoff w/ mushrooms\nover Parsley Butter Egg Noodles\nSalad\nDinner roll",
+    "Tuesday": "Beef Biria Tacos\nDiced Potatoes & Beef Chorizo\nSalad",
+    "Wednesday": "Cheese and Spinach Lasagna w/ Meat Sauce\nGarden Salad\nGarlic bread",
+    "Thursday": "Chicken and Turkey Sausage Jambalaya  \nBrown Sugar Yams\nFried Cabbage",
     "Friday": "Go to Chabad or Hillel or else you suck!",
 }
 
